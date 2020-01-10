@@ -1,7 +1,7 @@
 const Stream = require('node-rtsp-stream')
 stream = new Stream({
     name: 'name',
-    streamUrl: 'rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov',
+    streamUrl: 'rtsp://admin:123456@192.168.1.114:554/',
     wsPort: 9999,
     ffmpegOptions: { // options ffmpeg flags
         '-stats': '', // an option with no neccessary value uses a blank string
