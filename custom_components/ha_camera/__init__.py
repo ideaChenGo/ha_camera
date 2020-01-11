@@ -60,7 +60,7 @@ def async_setup(hass, config):
 
     hass.http.register_view(HassGateView)
     
-    Link(hass, "摄像头", URL, "mdi:camcorder-box")
+    Link(hass, "摄像监控", URL, "mdi:camcorder-box")
     # 加载自定义卡片
     hass.components.frontend.add_extra_js_url(hass, ROOT_PATH + '/ha-camera-panel.js')
     return True

@@ -70,7 +70,7 @@ class HaCameraPanel extends HTMLElement {
         // console.log(hass)
         this._hass = hass
         let { states } = hass
-		let state = states['weblink.she_xiang_tou']
+		let state = states['weblink.she_xiang_jian_kong']
 		if(state){
 			let { $, config } = this
 			let { snapshot, ws } = config
