@@ -59,7 +59,12 @@ class HaCameraPanel extends HTMLElement {
 
     get hass() {
         return this._hass
-    }
+	}
+	
+	get r(){
+		let d = new Date()
+		return `${d.getFullYear()}${d.getMonth()}${d.getDate()}${d.getHours()}${d.getMinutes()}`
+	}
 
     set hass(hass) {
         // console.log(hass)
@@ -72,7 +77,7 @@ class HaCameraPanel extends HTMLElement {
 			if(snapshot){
 				const canvas = $('#video-canvas');
 				const ss = $('#snapshot')
-				ss.src = `${state.state}?url=${snapshot}`
+				ss.src = `${state.state}?r=${this.r}&url=${snapshot}`
 				ss.onclick = ()=>{
 					ss.classList.toggle('hide')
 					canvas.classList.toggle('hide')
