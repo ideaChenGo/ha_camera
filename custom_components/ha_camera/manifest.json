@@ -1,0 +1,8 @@
+{
+    "domain": "ha_camera",
+    "name": "ha_camera",
+    "documentation": "https://github.com/shaonianzhentan/ha_camera",
+    "requirements": [],
+    "dependencies": [],
+    "codeowners": []
+}
