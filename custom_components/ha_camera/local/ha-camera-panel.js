@@ -68,7 +68,7 @@ class HaCameraPanel extends HTMLElement {
 		let state = states['weblink.she_xiang_tou']
 		if(state){
 			let { $, config } = this
-			let { snapshot } = config
+			let { snapshot, ws } = config
 			if(snapshot){
 				const canvas = $('#video-canvas');
 				const ss = $('#snapshot')
@@ -77,13 +77,18 @@ class HaCameraPanel extends HTMLElement {
 					ss.classList.toggle('hide')
 					canvas.classList.toggle('hide')
 					$('.ha-camera-panel').classList.toggle('fullscreen')
-					if(!window.haCameraPlayer){
-						window.haCameraPlayer = new JSMpeg.Player('ws://192.168.1.107:9999/', { canvas });
+					
+					if(ws){
+						if(!window.haCameraPlayer){
+							window.haCameraPlayer = new JSMpeg.Player(ws, { canvas });
+						}else{
+							let cv = window.haCameraPlayer.options.canvas
+							// console.log(canvas, cv)
+							$('.card-content').replaceChild(cv, canvas)
+						}
 					}else{
-						let cv = window.haCameraPlayer.options.canvas
-						// console.log(canvas, cv)
-						$('.card-content').replaceChild(cv, canvas)
-					}
+						this.toast('没有配置ws链接')
+					}			
 				}
 				$('.card-header .name').onclick = ()=>{
 					ss.onclick()
