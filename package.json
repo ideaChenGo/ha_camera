@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shaonianzhentan/ha_camera#readme",
   "dependencies": {
+    "node-onvif": "^0.1.7",
     "node-rtsp-stream": "0.0.8"
   }
 }
